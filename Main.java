@@ -18,7 +18,7 @@ public class Main {
         do {
             try {
                 command = Commands.executeMatching(Terminal.readLine(), connectSix,
-                        connectSix.determineCurrentPlayer(connectSix.getTurn(), numberOfPlayers), mode);
+                        connectSix.determineCurrentPlayer(numberOfPlayers), mode);
             } catch (InputException e) {
                 Terminal.printError(e.getMessage());
             }
