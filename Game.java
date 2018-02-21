@@ -252,17 +252,15 @@ public class Game {
     }
 
     /**
-     * @param turn the current turn in the game
-     * 
      * @param numberOfPlayers the number of players playing the game
      * 
      * @return the current player 
      */
-    public Player determineCurrentPlayer(int turn, int numberOfPlayers) {
-        if (turn >= numberOfPlayers + 1) {
-            turn = 1;
+    public Player determineCurrentPlayer(int numberOfPlayers) {
+        if (currentTurn >= numberOfPlayers + 1) {
+            currentTurn = 1;
         }
-        return players.get(turn - 1);
+        return players.get(currentTurn - 1);
 
     }
 
