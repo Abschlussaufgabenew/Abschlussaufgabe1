@@ -97,6 +97,7 @@ public enum Commands {
         public void execute(MatchResult matcher, Game game, Player player, String mode) throws InputException {
             int gameSize = game.getBoard().length;
             game = new Game(gameSize);
+            game.setGameOver(false);
             Terminal.printLine("OK");
         }
     },
