@@ -94,7 +94,9 @@ public class Game {
      * @param player the current player
      *            
      * @return true if the current player wins the game during this turn else false
-     * @throws IllegalArgumentException
+     *
+     * @throws IllegalArgumentException if one or both slots are already taken or if 
+     * the place command is given after the game is already over
      */
     public boolean playTurnStandard(int row1, int col1, int row2, int col2, Player player) throws InputException {
 
@@ -161,8 +163,8 @@ public class Game {
     /**
      * Prints a specific row out of the game board
      * 
-     * @param rowNumber
-     *            the number of the row to print
+     * @param rowNumber the number of the row to print
+     *            
      */
     public void printRow(int rowNumber) throws InputException {
         if (rowNumber < 0 || rowNumber >= board.length) {
