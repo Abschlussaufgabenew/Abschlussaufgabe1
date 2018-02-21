@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class Game {
     private LinkedList<Player> players = new LinkedList<Player>();
     private static String[][] board;
-    private static int currentTurn = 1;
+    private static int currentTurn = 1; //causes problem with draw because of currentplayer method
     private boolean gameOver = false;
 
     /**
@@ -264,7 +264,7 @@ public class Game {
      * 
      * @return the current player 
      */
-    public Player determineCurrentPlayer(int numberOfPlayers) {
+    public Player determineCurrentPlayer(int numberOfPlayers) {    //causes problem with draw
         if (currentTurn >= numberOfPlayers + 1) {
             currentTurn = 1;
         }
