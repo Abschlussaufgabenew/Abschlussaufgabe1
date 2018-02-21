@@ -71,7 +71,11 @@ public class Game {
         }
         if (!board[row1][col1].equals("**") || !board[row2][col2].equals("**")) {
             throw new InputException("slot already full!");
-        } else {
+        }
+        else if(row1 == row2 && col1 == col2) {
+            throw new InputException("slot already full");
+        }
+        else {
             board[row1][col1] = player.getName();
             board[row2][col2] = player.getName();
             currentTurn++;
@@ -106,9 +110,13 @@ public class Game {
 
         if (!board[row1][col1].equals("**") || !board[row2][col2].equals("**")) {
             throw new InputException("slot already full!");
-        } else if (row1 < 0 || row1 >= board.length || row2 < 0 || row2 >= board.length || col1 < 0
+        } 
+        else if (row1 < 0 || row1 >= board.length || row2 < 0 || row2 >= board.length || col1 < 0
                 || col1 >= board.length || col2 < 0 || col2 >= board.length) {
             throw new InputException("unexisting slot");
+        }
+        else if(row1 == row2 && col1 == col2) {
+            throw new InputException("slot already full");
         }
 
         else {
