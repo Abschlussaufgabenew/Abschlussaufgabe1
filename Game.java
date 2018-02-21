@@ -43,7 +43,7 @@ public class Game {
      */
     public boolean playTurnTorus(int row1, int col1, int row2, int col2, Player player) throws InputException {
         if (gameOver) {
-            throw new InputException("game already over");
+            throw new InputException("game already over!");
         }
         if (row1 >= board.length) {
             row1 = row1 % board.length;
@@ -70,7 +70,7 @@ public class Game {
             col2 = -col2 % board.length;
         }
         if (!board[row1][col1].equals("**") || !board[row2][col2].equals("**")) {
-            throw new InputException("slot already full");
+            throw new InputException("slot already full!");
         } else {
             board[row1][col1] = player.getName();
             board[row2][col2] = player.getName();
@@ -101,11 +101,11 @@ public class Game {
     public boolean playTurnStandard(int row1, int col1, int row2, int col2, Player player) throws InputException {
 
         if (gameOver) {
-            throw new InputException("game already over");
+            throw new InputException("game already over!");
         }
 
         if (!board[row1][col1].equals("**") || !board[row2][col2].equals("**")) {
-            throw new InputException("slot already full");
+            throw new InputException("slot already full!");
         } else if (row1 < 0 || row1 >= board.length || row2 < 0 || row2 >= board.length || col1 < 0
                 || col1 >= board.length || col2 < 0 || col2 >= board.length) {
             throw new InputException("unexisting slot");
@@ -168,7 +168,7 @@ public class Game {
      */
     public void printRow(int rowNumber) throws InputException {
         if (rowNumber < 0 || rowNumber >= board.length) {
-            throw new InputException("invalid row number");
+            throw new InputException("invalid row number!");
         }
         String[] row = board[rowNumber];
         if (!row[rowNumber].equals("P1") && !row[rowNumber].equals("P2") && !row[rowNumber].equals("P3")
@@ -186,7 +186,7 @@ public class Game {
      */
     public void printColumn(int columnNumber) throws InputException {
         if (columnNumber >= board.length || columnNumber < 0) {
-            throw new InputException("invalid column number");
+            throw new InputException("invalid column number!");
         } else {
             String column = "";
             for (int i = 0; i < board.length; i++) {
@@ -206,7 +206,7 @@ public class Game {
      */
     public void printSlot(int row, int col) throws InputException {
         if (row < 0 || row >= board.length || col < 0 || col > board.length) {
-            throw new InputException("unexisting slot");
+            throw new InputException("unexisting slot!");
         } else {
             Terminal.printLine(board[row][col]);
         }
