@@ -16,7 +16,6 @@ public enum Commands {
             int row2 = Integer.parseInt(matcher.group(3));
             int col1 = Integer.parseInt(matcher.group(2));
             int col2 = Integer.parseInt(matcher.group(4));
-            boolean gameOver = false;
 
             if (mode.equals("standard")) {
 
